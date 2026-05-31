@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Roaming Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Lifestyle and travel experiences</p>
+      <h1>The Roaming Journal</h1>
+      <p class="intro">Save stories, photos, city notes, travel memories, and favorite moments in one private browser-based blog.</p>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="editor-panel" aria-labelledby="editor-title">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">New entry</p>
+          <h2 id="editor-title">Write a blog post</h2>
+        </div>
+        <button class="ghost-button" id="clearFormButton" type="button">Clear</button>
+      </div>
+
+      <form id="postForm" class="post-form">
+        <input type="hidden" id="postId">
+
+        <label for="postTitle">Title</label>
+        <input id="postTitle" type="text" placeholder="A slow morning in Lisbon" required>
+
+        <label for="postCategory">Category</label>
+        <select id="postCategory">
+          <option value="Travel">Travel</option>
+          <option value="Lifestyle">Lifestyle</option>
+          <option value="Food">Food</option>
+          <option value="Wellness">Wellness</option>
+          <option value="Memory">Memory</option>
+        </select>
+
+        <label for="postContent">Your story</label>
+        <textarea id="postContent" rows="10" placeholder="Write about the place, mood, people, meals, lessons, and moments you want to remember..." required></textarea>
+
+        <label for="postImages">Pictures</label>
+        <input id="postImages" type="file" accept="image/*" multiple>
+        <div id="imagePreview" class="image-preview" aria-live="polite"></div>
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite"></p>
+
+        <button class="save-button" type="submit">Save post</button>
+      </form>
+    </section>
+
+    <section class="posts-section" aria-labelledby="posts-title">
+      <div class="posts-toolbar">
+        <div>
+          <p class="eyebrow">Saved posts</p>
+          <h2 id="posts-title">Your blog</h2>
+        </div>
+        <p id="postCount" class="post-count">0 posts</p>
+      </div>
+      <div id="postsList" class="posts-list"></div>
+    </section>
+  </main>
+
+  <template id="emptyTemplate">
+    <div class="empty-state">
+      <h3>No posts yet</h3>
+      <p>Your lifestyle and travel stories will appear here after you save them.</p>
+    </div>
+  </template>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Roaming Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="viewer-page">
+  <header class="site-header viewer-header">
+    <div>
+      <p class="eyebrow">Lifestyle and travel experiences</p>
+      <h1>The Roaming Journal</h1>
+      <p class="intro">Stories, photos, city notes, travel memories, and favorite moments from the road.</p>
+    </div>
+  </header>
+
+  <main class="viewer-shell">
+    <section class="posts-section" aria-labelledby="posts-title">
+      <div class="posts-toolbar">
+        <div>
+          <p class="eyebrow">Latest posts</p>
+          <h2 id="posts-title">Travel stories</h2>
+        </div>
+        <p id="postCount" class="post-count">0 posts</p>
+      </div>
+      <div id="postsList" class="posts-list viewer-posts"></div>
+    </section>
+  </main>
+
+  <template id="emptyTemplate">
+    <div class="empty-state">
+      <h3>No posts yet</h3>
+      <p>Published travel and lifestyle stories will appear here soon.</p>
+    </div>
+  </template>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
